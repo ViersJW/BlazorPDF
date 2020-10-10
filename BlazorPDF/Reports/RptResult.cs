@@ -74,18 +74,22 @@ namespace BlazorPDF.Reports
 
             #region Basic Info 1st Row
 
-            _pdfPCell = new PdfPCell(new Phrase("Klient : ", _fontStyle));
-            _pdfPCell.Colspan = 4;
-            _pdfPCell.HorizontalAlignment = Element.ALIGN_RIGHT;
-            _pdfPCell.Border = 0;
-            _pdfPCell.ExtraParagraphSpace = 0;
+            _pdfPCell = new PdfPCell(new Phrase("Klient : ", _fontStyle))
+            {
+                Colspan = 4,
+                HorizontalAlignment = Element.ALIGN_RIGHT,
+                Border = 0,
+                ExtraParagraphSpace = 0
+            };
             _pdfPTable.AddCell(_pdfPCell);
 
-            _pdfPCell = new PdfPCell(new Phrase( _student.Name, fontStyle));
-            _pdfPCell.Colspan = 4;
-            _pdfPCell.HorizontalAlignment = Element.ALIGN_LEFT;
-            _pdfPCell.Border = 0;
-            _pdfPCell.ExtraParagraphSpace = 0;
+            _pdfPCell = new PdfPCell(new Phrase(_student.Name, fontStyle))
+            {
+                Colspan = 4,
+                HorizontalAlignment = Element.ALIGN_LEFT,
+                Border = 0,
+                ExtraParagraphSpace = 0
+            };
             _pdfPTable.AddCell(_pdfPCell);
 
             //_pdfPCell = new PdfPCell(new Phrase("Class : ", _fontStyle));
@@ -108,32 +112,40 @@ namespace BlazorPDF.Reports
 
             #region Basic Info 2nd Row
 
-            _pdfPCell = new PdfPCell(new Phrase("Data Początkowa : ", _fontStyle));
-            _pdfPCell.Colspan = 2;
-            _pdfPCell.HorizontalAlignment = Element.ALIGN_RIGHT;
-            _pdfPCell.Border = 0;
-            _pdfPCell.ExtraParagraphSpace = 0;
+            _pdfPCell = new PdfPCell(new Phrase("Data Początkowa : ", _fontStyle))
+            {
+                Colspan = 2,
+                HorizontalAlignment = Element.ALIGN_RIGHT,
+                Border = 0,
+                ExtraParagraphSpace = 0
+            };
             _pdfPTable.AddCell(_pdfPCell);
 
-            _pdfPCell = new PdfPCell(new Phrase(_student.Section, fontStyle));
-            _pdfPCell.Colspan = 2;
-            _pdfPCell.HorizontalAlignment = Element.ALIGN_LEFT;
-            _pdfPCell.Border = 0;
-            _pdfPCell.ExtraParagraphSpace = 0;
+            _pdfPCell = new PdfPCell(new Phrase(_student.Section, fontStyle))
+            {
+                Colspan = 2,
+                HorizontalAlignment = Element.ALIGN_LEFT,
+                Border = 0,
+                ExtraParagraphSpace = 0
+            };
             _pdfPTable.AddCell(_pdfPCell);
 
-            _pdfPCell = new PdfPCell(new Phrase("Data Końcowa : ", _fontStyle));
-            _pdfPCell.Colspan = 2;
-            _pdfPCell.HorizontalAlignment = Element.ALIGN_RIGHT;
-            _pdfPCell.Border = 0;
-            _pdfPCell.ExtraParagraphSpace = 0;
+            _pdfPCell = new PdfPCell(new Phrase("Data Końcowa : ", _fontStyle))
+            {
+                Colspan = 2,
+                HorizontalAlignment = Element.ALIGN_RIGHT,
+                Border = 0,
+                ExtraParagraphSpace = 0
+            };
             _pdfPTable.AddCell(_pdfPCell);
 
-            _pdfPCell = new PdfPCell(new Phrase(_student.Roll.ToString(), fontStyle));
-            _pdfPCell.Colspan = 2;
-            _pdfPCell.HorizontalAlignment = Element.ALIGN_LEFT;
-            _pdfPCell.Border = 0;
-            _pdfPCell.ExtraParagraphSpace = 0;
+            _pdfPCell = new PdfPCell(new Phrase(_student.Roll.ToString(), fontStyle))
+            {
+                Colspan = 2,
+                HorizontalAlignment = Element.ALIGN_LEFT,
+                Border = 0,
+                ExtraParagraphSpace = 0
+            };
             _pdfPTable.AddCell(_pdfPCell);
 
             _pdfPTable.CompleteRow();
@@ -142,32 +154,40 @@ namespace BlazorPDF.Reports
 
             #region Basic Info 3rd Row
 
-            _pdfPCell = new PdfPCell(new Phrase("Father : ", _fontStyle));
-            _pdfPCell.Colspan = 2;
-            _pdfPCell.HorizontalAlignment = Element.ALIGN_RIGHT;
-            _pdfPCell.Border = 0;
-            _pdfPCell.ExtraParagraphSpace = 0;
+            _pdfPCell = new PdfPCell(new Phrase("Father : ", _fontStyle))
+            {
+                Colspan = 2,
+                HorizontalAlignment = Element.ALIGN_RIGHT,
+                Border = 0,
+                ExtraParagraphSpace = 0
+            };
             _pdfPTable.AddCell(_pdfPCell);
 
-            _pdfPCell = new PdfPCell(new Phrase(_student.FatherName, fontStyle));
-            _pdfPCell.Colspan = 2;
-            _pdfPCell.HorizontalAlignment = Element.ALIGN_LEFT;
-            _pdfPCell.Border = 0;
-            _pdfPCell.ExtraParagraphSpace = 0;
+            _pdfPCell = new PdfPCell(new Phrase(_student.FatherName, fontStyle))
+            {
+                Colspan = 2,
+                HorizontalAlignment = Element.ALIGN_LEFT,
+                Border = 0,
+                ExtraParagraphSpace = 0
+            };
             _pdfPTable.AddCell(_pdfPCell);
 
-            _pdfPCell = new PdfPCell(new Phrase("Mother : ", _fontStyle));
-            _pdfPCell.Colspan = 2;
-            _pdfPCell.HorizontalAlignment = Element.ALIGN_RIGHT;
-            _pdfPCell.Border = 0;
-            _pdfPCell.ExtraParagraphSpace = 0;
+            _pdfPCell = new PdfPCell(new Phrase("Mother : ", _fontStyle))
+            {
+                Colspan = 2,
+                HorizontalAlignment = Element.ALIGN_RIGHT,
+                Border = 0,
+                ExtraParagraphSpace = 0
+            };
             _pdfPTable.AddCell(_pdfPCell);
 
-            _pdfPCell = new PdfPCell(new Phrase(_student.MotherName, fontStyle));
-            _pdfPCell.Colspan = 2;
-            _pdfPCell.HorizontalAlignment = Element.ALIGN_LEFT;
-            _pdfPCell.Border = 0;
-            _pdfPCell.ExtraParagraphSpace = 0;
+            _pdfPCell = new PdfPCell(new Phrase(_student.MotherName, fontStyle))
+            {
+                Colspan = 2,
+                HorizontalAlignment = Element.ALIGN_LEFT,
+                Border = 0,
+                ExtraParagraphSpace = 0
+            };
             _pdfPTable.AddCell(_pdfPCell);
 
             _pdfPTable.CompleteRow();
@@ -176,25 +196,31 @@ namespace BlazorPDF.Reports
 
             #region Table Header
 
-            _pdfPCell = new PdfPCell(new Phrase("SL", _fontStyle));
-            _pdfPCell.Colspan = 2;
-            _pdfPCell.HorizontalAlignment = Element.ALIGN_CENTER;
-            _pdfPCell.VerticalAlignment = Element.ALIGN_MIDDLE;
-            _pdfPCell.BackgroundColor = BaseColor.LightGray;
+            _pdfPCell = new PdfPCell(new Phrase("SL", _fontStyle))
+            {
+                Colspan = 2,
+                HorizontalAlignment = Element.ALIGN_CENTER,
+                VerticalAlignment = Element.ALIGN_MIDDLE,
+                BackgroundColor = BaseColor.LightGray
+            };
             _pdfPTable.AddCell(_pdfPCell);
 
-            _pdfPCell = new PdfPCell(new Phrase("Subject", _fontStyle));
-            _pdfPCell.Colspan = 4;
-            _pdfPCell.HorizontalAlignment = Element.ALIGN_CENTER;
-            _pdfPCell.VerticalAlignment = Element.ALIGN_MIDDLE;
-            _pdfPCell.BackgroundColor = BaseColor.LightGray;
+            _pdfPCell = new PdfPCell(new Phrase("Subject", _fontStyle))
+            {
+                Colspan = 4,
+                HorizontalAlignment = Element.ALIGN_CENTER,
+                VerticalAlignment = Element.ALIGN_MIDDLE,
+                BackgroundColor = BaseColor.LightGray
+            };
             _pdfPTable.AddCell(_pdfPCell);
 
-            _pdfPCell = new PdfPCell(new Phrase("Grade", _fontStyle));
-            _pdfPCell.Colspan = 2;
-            _pdfPCell.HorizontalAlignment = Element.ALIGN_CENTER;
-            _pdfPCell.VerticalAlignment = Element.ALIGN_MIDDLE;
-            _pdfPCell.BackgroundColor = BaseColor.LightGray;
+            _pdfPCell = new PdfPCell(new Phrase("Grade", _fontStyle))
+            {
+                Colspan = 2,
+                HorizontalAlignment = Element.ALIGN_CENTER,
+                VerticalAlignment = Element.ALIGN_MIDDLE,
+                BackgroundColor = BaseColor.LightGray
+            };
             _pdfPTable.AddCell(_pdfPCell);
 
             _pdfPTable.CompleteRow();
@@ -207,25 +233,31 @@ namespace BlazorPDF.Reports
 
             foreach (var mark in _student.Marks)
             {
-                _pdfPCell = new PdfPCell(new Phrase(nSL++.ToString(), fontStyle));
-                _pdfPCell.Colspan = 2;
-                _pdfPCell.HorizontalAlignment = Element.ALIGN_CENTER;
-                _pdfPCell.VerticalAlignment = Element.ALIGN_MIDDLE;
-                _pdfPCell.BackgroundColor = BaseColor.LightGray;
+                _pdfPCell = new PdfPCell(new Phrase(nSL++.ToString(), fontStyle))
+                {
+                    Colspan = 2,
+                    HorizontalAlignment = Element.ALIGN_CENTER,
+                    VerticalAlignment = Element.ALIGN_MIDDLE,
+                    BackgroundColor = BaseColor.LightGray
+                };
                 _pdfPTable.AddCell(_pdfPCell);
 
-                _pdfPCell = new PdfPCell(new Phrase(mark.Subject, fontStyle));
-                _pdfPCell.Colspan = 4;
-                _pdfPCell.HorizontalAlignment = Element.ALIGN_CENTER;
-                _pdfPCell.VerticalAlignment = Element.ALIGN_MIDDLE;
-                _pdfPCell.BackgroundColor = BaseColor.LightGray;
+                _pdfPCell = new PdfPCell(new Phrase(mark.Subject, fontStyle))
+                {
+                    Colspan = 4,
+                    HorizontalAlignment = Element.ALIGN_CENTER,
+                    VerticalAlignment = Element.ALIGN_MIDDLE,
+                    BackgroundColor = BaseColor.LightGray
+                };
                 _pdfPTable.AddCell(_pdfPCell);
 
-                _pdfPCell = new PdfPCell(new Phrase(mark.Grade, fontStyle));
-                _pdfPCell.Colspan = 2;
-                _pdfPCell.HorizontalAlignment = Element.ALIGN_CENTER;
-                _pdfPCell.VerticalAlignment = Element.ALIGN_MIDDLE;
-                _pdfPCell.BackgroundColor = BaseColor.LightGray;
+                _pdfPCell = new PdfPCell(new Phrase(mark.Grade, fontStyle))
+                {
+                    Colspan = 2,
+                    HorizontalAlignment = Element.ALIGN_CENTER,
+                    VerticalAlignment = Element.ALIGN_MIDDLE,
+                    BackgroundColor = BaseColor.LightGray
+                };
                 _pdfPTable.AddCell(_pdfPCell);
 
                 _pdfPTable.CompleteRow();
@@ -237,11 +269,15 @@ namespace BlazorPDF.Reports
         private void ReportHeader()
         {
             _fontStyle = FontFactory.GetFont("Tahoma", 18f, 1);
-            _pdfPCell = new PdfPCell(new Phrase("Rozliczenie Godzinowe", _fontStyle));
-            _pdfPCell.Colspan = _maxColumn;
-            _pdfPCell.HorizontalAlignment = Element.ALIGN_CENTER;
-            _pdfPCell.Border = 0;
-            _pdfPCell.ExtraParagraphSpace = 0;
+
+            _pdfPCell = new PdfPCell(new Phrase("Rozliczenie Godzinowe", _fontStyle))
+            {
+                Colspan = _maxColumn,
+                HorizontalAlignment = Element.ALIGN_CENTER,
+                Border = 0,
+                ExtraParagraphSpace = 0
+            };
+
             _pdfPTable.AddCell(_pdfPCell);
             _pdfPTable.CompleteRow();
         }

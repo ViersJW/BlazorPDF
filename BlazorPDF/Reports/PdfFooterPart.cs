@@ -22,16 +22,20 @@ namespace BlazorPDF.Reports
             string text = "Strona : " + writer.PageNumber.ToString("00"), 
                 text1 = "Wygenerowano : " + DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
 
-            var pdfCell = new PdfPCell(new Phrase(text, pageNumberFont));
-            pdfCell.HorizontalAlignment = Element.ALIGN_RIGHT;
-            pdfCell.Border = 0;
-            pdfCell.BackgroundColor = BaseColor.White;
+            var pdfCell = new PdfPCell(new Phrase(text, pageNumberFont))
+            {
+                HorizontalAlignment = Element.ALIGN_RIGHT,
+                Border = 0,
+                BackgroundColor = BaseColor.White
+            };
             numberTable.AddCell(pdfCell);
 
-            pdfCell = new PdfPCell(new Phrase(text1, pageNumberFont));
-            pdfCell.HorizontalAlignment = Element.ALIGN_CENTER;
-            pdfCell.Border = 0;
-            pdfCell.BackgroundColor = BaseColor.White;
+            pdfCell = new PdfPCell(new Phrase(text1, pageNumberFont))
+            {
+                HorizontalAlignment = Element.ALIGN_CENTER,
+                Border = 0,
+                BackgroundColor = BaseColor.White
+            };
             numberTable.AddCell(pdfCell);
 
             numberTable.TotalWidth = 450;
