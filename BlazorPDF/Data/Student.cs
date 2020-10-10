@@ -32,27 +32,33 @@ namespace BlazorPDF.Data
 
         private Student GetStudentInfo()
         {
-            Student student = new Student();
-            student.StudentId = 3;
-            student.Name = "Jan Nowak";
-            student.Class = 6;
-            student.Roll = 1001;
-            student.Section = "A";
-            student.FatherName = "Roman";
-            student.MotherName = "Maria";
+            Student student = new Student
+            {
+                StudentId = 3,
+                Name = "Jan Nowak",
+                Class = 6,
+                Roll = 1001,
+                Section = "A",
+                FatherName = "Roman",
+                MotherName = "Maria"
+            };
 
-            Mark mark = new Mark();
-            mark.MardId = 1;
-            mark.StudentId = 3;
-            mark.Subject = "English";
-            mark.Grade = "A";
+            Mark mark = new Mark
+            {
+                MardId = 1,
+                StudentId = 3,
+                Subject = "English",
+                Grade = "A"
+            };
             student.Marks.Add(mark);
 
-            mark = new Mark();
-            mark.MardId = 2;
-            mark.StudentId = 3;
-            mark.Subject = "History";
-            mark.Grade = "B-";
+            mark = new Mark
+            {
+                MardId = 2,
+                StudentId = 3,
+                Subject = "History",
+                Grade = "B-"
+            };
             student.Marks.Add(mark);
 
             return student;
