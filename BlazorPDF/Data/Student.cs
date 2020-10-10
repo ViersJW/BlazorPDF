@@ -18,19 +18,7 @@ namespace BlazorPDF.Data
         public string MotherName { get; set; } = "";
         public List<Mark> Marks { get; set; } = new List<Mark>();
 
-        public void GeneratePDF(IJSRuntime jSRuntime)
-        {
-            Student student = this.GetStudentInfo();
-            RptResult rptResult = new RptResult();
-
-            jSRuntime.InvokeAsync<Student>(
-                    "saveAsFile",
-                    "StudentResult.pdf",
-                    Convert.ToBase64String(rptResult.Report(student))
-                );
-        }
-
-        private Student GetStudentInfo()
+        public static Student GetStudentInfo()
         {
             Student student = new Student
             {

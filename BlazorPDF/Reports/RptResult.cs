@@ -1,7 +1,9 @@
 ﻿using BlazorPDF.Data;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.JSInterop;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -22,16 +24,39 @@ namespace BlazorPDF.Reports
         Font _fontStyle;
         MemoryStream _memoryStream = new MemoryStream();
         Student _student = new Student();
+        public string FontPath => Path.Combine(_env.WebRootPath, "Fonts");
 
         #endregion
 
+        private readonly IWebHostEnvironment _env;
+
+        public RptResult(IWebHostEnvironment env)
+        {
+            _env = env;
+        }
+
+        public void GeneratePDF(IJSRuntime jSRuntime)
+        {
+            Student student = Student.GetStudentInfo();
+
+            jSRuntime.InvokeAsync<Student>(
+                    "saveAsFile",
+                    "StudentResult.pdf",
+                    Convert.ToBase64String(Report(student))
+                );
+        }
+
+
         public byte[] Report(Student student)
         {
+
             _student = student;
             _document = new Document(PageSize.A4, 10f, 10f, 20f, 30f);
             _pdfPTable.WidthPercentage = 100;
             _pdfPTable.HorizontalAlignment = Element.ALIGN_LEFT;
-            _fontStyle = FontFactory.GetFont("Tahoma", 8f, 1);
+
+            FontFactory.Register(FontPath);
+            _fontStyle = FontFactory.GetFont("Anonymous_Pro", 8f, 1);
 
             _pdfWriter = PdfWriter.GetInstance(_document, _memoryStream);
             _pdfWriter.PageEvent = new PdfFooterPart();
@@ -69,12 +94,12 @@ namespace BlazorPDF.Reports
 
         private void ReportBody()
         {
-            _fontStyle = FontFactory.GetFont("Tahoma", 10f, 1);
-            var fontStyle = FontFactory.GetFont("Tahoma", 10f, 0);
+            _fontStyle = new Font(BaseFont.CreateFont(Path.Combine(FontPath, "Anonymous_Pro.ttf"), BaseFont.CP1250, true));
+            var fontStyle = FontFactory.GetFont("Anonymous_Pro", 10f, 0);
 
             #region Basic Info 1st Row
 
-            _pdfPCell = new PdfPCell(new Phrase("Klient : ", _fontStyle))
+            _pdfPCell = new PdfPCell(new Phrase("Klient śćżźŚĆŹ --- : ", _fontStyle))
             {
                 Colspan = 4,
                 HorizontalAlignment = Element.ALIGN_RIGHT,
@@ -268,7 +293,7 @@ namespace BlazorPDF.Reports
 
         private void ReportHeader()
         {
-            _fontStyle = FontFactory.GetFont("Tahoma", 18f, 1);
+            _fontStyle = FontFactory.GetFont("Anonymous_Pro", 18f, 1);
 
             _pdfPCell = new PdfPCell(new Phrase("Rozliczenie Godzinowe", _fontStyle))
             {

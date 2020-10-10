@@ -1,6 +1,7 @@
 ﻿@page "/"
 @using BlazorPDF.Data
 @inject IJSRuntime jsRuntime;
+@inject BlazorPDF.Reports.RptResult report; 
 
 <h1>Results</h1>
 
@@ -9,8 +10,7 @@
 @code{
     private void GeneratePDF()
     {
-        Student student = new Student();
-        student.GeneratePDF(jsRuntime);
+        report.GeneratePDF(jsRuntime);
 
 
 
