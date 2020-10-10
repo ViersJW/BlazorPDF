@@ -1,7 +1,25 @@
 ﻿@page "/"
+@using BlazorPDF.Data
+@inject IJSRuntime jsRuntime;
 
-<h1>Hello, world!</h1>
+<h1>Results</h1>
 
-Welcome to your new app.
+<button class="btn btn-primary" @onclick="GeneratePDF">Generate</button>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+@code{
+    private void GeneratePDF()
+    {
+        Student student = new Student();
+        student.GeneratePDF(jsRuntime);
+
+
+
+
+
+    }
+
+
+
+
+
+}

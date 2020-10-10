@@ -19,8 +19,8 @@ namespace BlazorPDF.Reports
         public void AddPageNumber(PdfWriter writer, Document document)
         {
             var numberTable = new PdfPTable(1);
-            string text = "Page No : " + writer.PageNumber.ToString("00"), 
-                text1 = "Generated Time : " + DateTime.Now.ToString("dd-MMM-yyyy HH:mm:ss");
+            string text = "Strona : " + writer.PageNumber.ToString("00"), 
+                text1 = "Wygenerowano : " + DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
 
             var pdfCell = new PdfPCell(new Phrase(text, pageNumberFont));
             pdfCell.HorizontalAlignment = Element.ALIGN_RIGHT;
@@ -36,10 +36,6 @@ namespace BlazorPDF.Reports
 
             numberTable.TotalWidth = 450;
             numberTable.WriteSelectedRows(0, -1, document.Left+80,document.Bottom+10,writer.DirectContent);
-
-
-
-
         }
     }
 }
